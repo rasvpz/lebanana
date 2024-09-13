@@ -76,7 +76,7 @@ const viewHome = () => {
 
     {user?.displayName && (
       <>
-        <span type="button" className="text-white font-bold">{place}</span>
+        <span type="button" className="text-white font-bold">{place ? place : "Owner"}</span>
         <span onClick={signoutButton} className="text-red-600 cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"

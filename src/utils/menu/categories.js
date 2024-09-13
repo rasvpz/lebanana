@@ -77,7 +77,7 @@ export const categories = [
             { id:"KitkatChocoShake", itemsName: "KitkatChocolate", rate:70, bgColor: "bg-pink-500", fgColor: "bg-pink-700" },
             { id:"BelgiumChocoShake", itemsName: "BelgiumChocolate", rate:70, bgColor: "bg-[#6f4747]", fgColor: "bg-[#6f4747]" },
             { id:"DarkFantasyShake", itemsName: "DarkFantasy", rate:90, bgColor: "bg-yellow-500", fgColor: "bg-yellow-700" },
-            { id:"NutellaShakes", itemsName: "NutellaShakes", rate:10, bgColor: "bg-red-500", fgColor: "bg-red-700" },
+            { id:"NutellaShakes", itemsName: "NutellaShakes", rate:100, bgColor: "bg-red-500", fgColor: "bg-red-700" },
           ]
     },
     {
@@ -95,7 +95,7 @@ export const categories = [
             { id:"TenderCashewSp", itemsName: "TenderCashew", rate:80, bgColor: "bg-yellow-500", fgColor: "bg-yellow-700" },
             { id:"TenderDatesSp", itemsName: "TenderDates", rate:90, bgColor: "bg-red-500", fgColor: "bg-red-700" },
             { id:"TenderDryFriutSp", itemsName: "TenderDryFriut", rate:90, bgColor: "bg-red-300", fgColor: "bg-red-700" },
-            { id:"TenderSpecielSp", itemsName: "TenderSpeciel", rate:10, bgColor: "bg-orange-500", fgColor: "bg-orange-700" },
+            { id:"TenderSpecielSp", itemsName: "TenderSpeciel", rate:100, bgColor: "bg-orange-500", fgColor: "bg-orange-700" },
            ]
     },
     {

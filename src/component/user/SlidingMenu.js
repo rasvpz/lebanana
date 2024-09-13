@@ -12,130 +12,6 @@ const SlidingMenu = ({ filteredItems, noOfItems, setNoOfItems, setSuccessAlert }
   const [totalValue, setTotalValue] = useState(false);
 
 
-// Function to save data to Firebase
-// const saveData = async (noOfItems) => {
-//   const db = getDatabase();  
-//   const itemsArray = Array.isArray(noOfItems) ? noOfItems : Object.values(noOfItems);
-
-//   const orders = itemsArray.map((data) => ({
-//     category: data.categoryName || "",
-//     juiceName: data.juiceName || "",
-//     juiceId: data.juiceId || "",
-//     qty: data.count || 0,
-//     rate: data.rate || 0,
-//     amount: (data.count || 0) * (data.rate || 0),
-//     cardBg: data.cardBg || "",
-//     btnBg: data.btnBg || "",
-//     btnBrdr: data.btnBrdr || "",
-//     updatedAt: indianDate, 
-//     isDeleted: false,
-//     isActive: true,
-//   }));
-
-//   try {
-//     const newDocRef = totalValue ? push(ref(db, "juice/orders")) : '';  
-//     await set(newDocRef, {
-//       id: newDocRef.key,
-//       total: totalValue,
-//       waiter: waiter,
-//       place: place,
-//       toDayDate: toDayDate,
-//       orderedTime: orderedTime,
-//       createdAt: indianDate,
-//       isDeleted: false,
-//       isActive: true,
-//       orders
-//     });
-
-//     setNoOfItems({});
-//     setSuccessAlert(true);
-//   } catch (error) {
-//     console.error("Error saving orders:", error.message);
-//   }
-// };
-
-// Function to print the table
-// const printTable = async () => {
-//   // Save data to Firebase before printing
-//   await saveData(filteredItems, noOfItems);
-
-//   // Open the print window
-//   const printWindow = window.open('', '', 'height=600,width=400');
-  
-//   // Create the table HTML for printing
-//   const tableHTML = `
-//     <html>
-//       <head>
-//         <title>Print</title>
-//         <style>
-//           body {
-//             font-family: Arial, sans-serif;
-//           }
-//           table {
-//             width: 100%;
-//             border-collapse: collapse;
-//           }
-//           th, td {
-//             padding: 8px;
-//             text-align: left;
-//             border: 1px solid black;
-//           }
-//           th {
-//             background-color: #f2f2f2;
-//           }
-//         </style>
-//       </head>
-//       <body>
-//         <table>
-//           <tr>
-//             <td><h3 align="center">LeBanana <small>${place}</small></h3></td>
-//           </tr>
-//         </table>
-//         <table border="0" style="margin-top:-25px; margin-bottom:2px">
-//           <tr>
-//             <td align="left">${toDayDate}</td>
-//             <td align="right">${orderedTime}</td>
-//           </tr>
-//         </table>
-//         <table>
-//           <thead>
-//             <tr>
-//               <th>No</th>
-//               <th width="75%">Item</th>
-//               <th>Qty</th>
-//               <th align="right">Amnt</th>
-//             </tr>
-//           </thead>
-//           <tbody>
-//             ${filteredItems?.map((key, idx) => `
-//               <tr>
-//                 <td>${idx + 1}</td>
-//                 <td>${key}</td>
-//                 <td>${noOfItems[key]?.count || 0}</td>
-//                 <td align="right">₹${(noOfItems[key]?.count || 0) * (noOfItems[key]?.rate || 0)}</td>
-//               </tr>
-//             `).join('')}
-//             <tr>
-//               <td></td>
-//               <td></td>
-//               <td class="font-bold">Total</td>
-//               <td align="right" class="font-bold">₹${totalValue}</td>
-//             </tr>
-//           </tbody>
-//         </table>
-//         <p align="center">*** Thank you ***</p>
-//       </body>
-//     </html>
-//   `;
-  
-//   // Write content to the print window and print it
-//   printWindow.document.open();
-//   printWindow.document.write(tableHTML);
-//   printWindow.document.close();
-//   printWindow.focus();
-//   printWindow.print();
-// };
-
 const handleSave = async () => {
   try {
     await saveData(noOfItems, totalValue, waiter, place);
@@ -153,8 +29,7 @@ const handleSave = async () => {
 
   // Toggle the sliding menu
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
-    
+    setIsOpen(!isOpen);    
   };
 
   // Calculate total value when filteredItems or noOfItems changes

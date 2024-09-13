@@ -13,9 +13,11 @@ export const getIndianDateTime = () => {
 // Save data to Firebase
 export const saveData = async (noOfItems, totalValue, waiter, place) => {
   const { indianDate, toDayDate, orderedTime } = getIndianDateTime();
+  const currentDatePlace = `${toDayDate}_${place}`;
   const db = getDatabase();
 
   const itemsArray = Array.isArray(noOfItems) ? noOfItems : Object.values(noOfItems);
+
   const orders = itemsArray.map((data) => ({
     category: data.categoryName || 0,
     juiceName: data.juiceName || '',
@@ -32,10 +34,11 @@ export const saveData = async (noOfItems, totalValue, waiter, place) => {
   }));
 
   try {
-    const newDocRef = totalValue ? push(ref(db, "juice/orders")) : '';
+    const newDocRef = totalValue ? push(ref(db, `juice/${place}`)) : '';
     await set(newDocRef, {
       id: newDocRef.key,
       total: totalValue,
+      toDayDate_place: currentDatePlace,
       waiter,
       place,
       toDayDate,
