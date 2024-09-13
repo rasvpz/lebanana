@@ -93,7 +93,7 @@ const View = () => {
         console.error("Error fetching data:", error);
       }
     })();
-  }, [successAlert]);
+  }, [successAlert, place]);
  
  
   const getOrderDetailsForPrintAndUpdate = (orderId) => {
