@@ -17,15 +17,22 @@ import "jspdf-autotable";
 import { getIndianDateTime } from '../utils/constsnts/constant';
 import { PencilIcon, TrashIcon  } from '@heroicons/react/24/outline';
 import Alert from "./user/alert/Alert";
+import { useSelector } from "react-redux";
 const View = () => {
+  const user = useSelector(store => store.user)
+  const place = user?.displayName?.split(',')[1]?.trim()
+
   const [viewOrders, setViewOrders] = useState([]);
   const [totalSale, setTotalSale] = useState([]);
   const [successAlert, setSuccessAlert] = useState(null);
+
+
+
   // useEffect(() => {
   //   const { toDayDate } = getIndianDateTime(); 
 
   //   const db = getDatabase(app);
-  //   const dbRef = ref(db, "juice/orders");
+  //   const dbRef = ref(db, `juice/${place}``);
 
   //   // IIFE (Immediately Invoked Function Expression) to handle the async/await inside useEffect
   //   (async () => {
@@ -63,7 +70,7 @@ const View = () => {
   useEffect(() => {
     const { toDayDate } = getIndianDateTime(); 
     const db = getDatabase(app);
-    const dbRef = ref(db, "juice/orders");
+    const dbRef = ref(db, `juice/${place}`);
     (async () => {
       try {
         const query = firebaseQuery(
@@ -86,7 +93,7 @@ const View = () => {
         console.error("Error fetching data:", error);
       }
     })();
-  }, [successAlert]);
+  }, [successAlert, place]);
  
  
   const getOrderDetailsForPrintAndUpdate = (orderId) => {
@@ -94,9 +101,9 @@ const View = () => {
   };
 
   const orderDelete = async (orderId) => {
-    if (window.confirm("Are you sure you want to Delte ?")) {
+    if (window.confirm("Are you sure you want to Delete ?")) {
     const db = getDatabase();
-    const orderRef = ref(db, `juice/orders/${orderId}`); // Reference to the specific order  
+    const orderRef = ref(db, `juice/${place}/${orderId}`); // Reference to the specific order  
     try {
       // Updating the fields `isActive` and `isDeleted`
     await update(orderRef, {
@@ -104,7 +111,6 @@ const View = () => {
         isDeleted: true,
       });      
       // Log success message after successful update
-      console.log("Order marked as deleted:", orderId);
       setSuccessAlert(true);
 
     } catch (error) {
