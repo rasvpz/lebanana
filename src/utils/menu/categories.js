@@ -69,7 +69,7 @@ export const categories = [
             { id:"HocusPocusShake", itemsName: "HocusPocus", rate:80, bgColor: "bg-red-300", fgColor: "bg-red-700" },
             { id:"DryFruitShake", itemsName: "DryFruit", rate:80, bgColor: "bg-orange-500", fgColor: "bg-orange-700" },
             { id:"FigHoneyShake", itemsName: "FigAndHoney", rate:80, bgColor: "bg-pink-500", fgColor: "bg-pink-700" },
-            { id:"CashAlmndShake", itemsName: "CashewAlmond", rate:800, bgColor: "bg-[#6f4747]", fgColor: "bg-[#6f4747]" },
+            { id:"CashAlmndShake", itemsName: "CashewAlmond", rate:80, bgColor: "bg-[#6f4747]", fgColor: "bg-[#6f4747]" },
             { id:"OreoShake", itemsName: "Oreo", rate:70, bgColor: "bg-yellow-500", fgColor: "bg-yellow-700" },
             { id:"SnickersShake", itemsName: "Snickers", rate:70, bgColor: "bg-red-500", fgColor: "bg-red-700" },
             { id:"FiveStarShake", itemsName: "FiveStar", rate:70, bgColor: "bg-red-300", fgColor: "bg-red-700" },
