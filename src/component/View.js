@@ -12,7 +12,7 @@ import Header from "./Header";
 import app from "../utils/firebase";
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/24/solid";
-import { jsPDF } from "jspdf";
+// import { jsPDF } from "jspdf";
 import "jspdf-autotable";
 import { getIndianDateTime } from '../utils/constsnts/constant';
 import { PencilIcon, TrashIcon  } from '@heroicons/react/24/outline';
