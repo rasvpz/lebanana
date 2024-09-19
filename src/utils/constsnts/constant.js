@@ -57,7 +57,9 @@ export const saveData = async (noOfItems, totalValue, waiter, place) => {
 
 
 export const printTable = (place, toDayDate, orderedTime, filteredItems, noOfItems, totalValue) => {
-  const printWindow = window.open('', '', 'width=400');
+ 
+ console.log("Print", place, toDayDate, orderedTime, filteredItems, noOfItems, totalValue)
+  const printWindow = window.open('', '', 'width=100% ');
   const tableHTML = `
     <html>
       <head>
