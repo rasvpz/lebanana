@@ -68,3 +68,31 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+<!-- Rules -->
+<!-- {
+	"rules": {
+	  "juice": {
+		"orders": {
+		".indexOn": ["toDayDate","place","isActive","isDeleted"],
+    ".read": "now < 1728498600000",  // 2024-10-10
+    ".write": "now < 1728498600000",  // 2024-10-10
+		},
+		"Alathur": {
+		".indexOn": ["toDayDate","toDayDate_place","place","isActive","isDeleted"],
+    ".read": "now < 1728498600000",  // 2024-10-10
+    ".write": "now < 1728498600000",  // 2024-10-10
+		},
+		"Pazhayanoor": {
+		".indexOn": ["toDayDate","toDayDate_place","toDayDate","place","isActive","isDeleted"],
+    ".read": "now < 1728498600000",  // 2024-10-10
+    ".write": "now < 1728498600000",  // 2024-10-10
+		},
+		"Palakkad": {
+		".indexOn": ["toDayDate","toDayDate_place","toDayDate","place","isActive","isDeleted"],
+    ".read": "now < 1728498600000",  // 2024-10-10
+    ".write": "now < 1728498600000",  // 2024-10-10
+		}
+	  }
+	}
+  } -->
