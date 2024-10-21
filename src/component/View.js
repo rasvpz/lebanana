@@ -352,7 +352,7 @@ const View = () => {
                         onClick={() => printTable(order.id, order)}
                         className="bg-red-500 p-2 text-white font-bold rounded"
                       >
-                        PRINT
+                        PRINT.
                       </button>
                     </td>
                     <td className="text-center font-bold">
